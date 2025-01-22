@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --grey: #393e41;
+    --red: #e94f37;
+    --white: #f6f7eb;
+    --azure: #9bc1bc;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--grey);
+    color: var(--white);
+}
+*::selection {
+    background-color: var(--azure);
+}
+#image-container {
+    max-height: 100vh;
+    max-width: 40vw;
+    position: relative;
+}
+#image-container img{
+    width: 100%;
+    object-fit: cover;
+}
+#image-container::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#image-container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    z-index: 2;
+    width: 100%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+#form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    gap: 30px;
+    padding: 20px;
+    width: 80%;
+}
+form button {
+    grid-column: 1;
+    justify-self: start;
+    padding: 5px 20px;
+    border: none;
+    background-color: var(--azure);
+}
+form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    row-gap: 10px;
+}
+form h2 {
+    grid-column: 1/-1;
+}
+input{
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+}
+input:focus{
+    outline: 2px solid var(--azure);
+
+}
+form input.error{
+    outline: 2px solid var(--red);
+}
+.input-control {
+    width: 100%;
+    position: relative;
+}
+.error-msg {
+    display: none;
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    width: 100%;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 5px;
+    font-size: .7rem;
+}
+.password-error {
+    width: 100%;
+    bottom: -100%;
+}
+form select {
+    margin: 0;
+    padding: 5px 10px;
+    border: 2px solid var(--grey);
+    position: relative;
+}
+form select.error {
+    outline: 2px solid var(--red);
+
+}
+.password-container {
+    position: relative;
+}
+.password-container p {
+    position: absolute;
+    bottom: -40%;
+    font-size: .7rem;
+    width: fit-content;
+    white-space: nowrap;
+}
+button[type="submit"]{
+    margin-top: 30px;
+}

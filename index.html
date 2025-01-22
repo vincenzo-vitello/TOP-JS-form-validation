@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with Javascript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div id="image-container">
+            <img src="https://images.unsplash.com/photo-1709911784111-5e424d2de998?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZvcm18ZW58MHx8MHx8fDA%3D" alt="Picture of a palace">
+            <h1>Form Validation with Javascript</h1>
+        </div>
+        <div id="form-container">
+            <form action="/" novalidate id="form">
+                <h2>Please enter your data</h2>
+                <div class="input-control">
+                    <label for="name">Your name</label>
+                    <input required type="text" name="name" id="name" placeholder="John">
+                    <div class="error-msg"></div>
+                </div>
+                <div class="input-control">
+                    <label for="lastname">Your lastname</label>
+                    <input required type="text" name="lastname" id="lastname" placeholder="Doe">
+                    <div class="error-msg"></div>
+                </div>
+                <div class="input-control">
+                    <label for="email">Your email</label>
+                    <input required type="email" name="email" id="email" placeholder="e.g.@email.com">
+                    <div class="error-msg"></div>
+                </div>
+                <div></div>
+                <div class="input-control">
+                    <label for="country">Country</label>
+                    <select id="country">
+                        <option value="">select one</option>
+                        <option value="it">Italy</option>
+                        <option value="ch">Switzerland</option>
+                        <option value="de">Germany</option>
+                        <option value="fr">France</option>
+                        <option value="nl">Netherlands</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <input type="text" id="other-countries" style="display: none;" placeholder="please enter your country">
+                      <div class="error-msg"></div>
+                </div>
+                <div class="input-control">
+                    <label for="zipcode">Zip Code</label>
+                    <input required type="text" name="zipcode" id="zipcode">
+                    <div class="error-msg"></div>
+                </div>
+                <div class="input-control password-container">
+                    <label for="password">Create Password</label>
+                    <input required type="password" id="password" minlength="8" maxlength="30">
+                    <p>(Password must be at least 8 characters long.)</p>
+                    <div class="error-msg password-error"></div>
+                </div>
+                <div class="input-control"> 
+                    <label for="pw-confirm">Confirm Password</label>
+                    <input required type="password" id="pw-confirm">
+                    <div class="error-msg"></div>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <script defer src="index.js"></script>
+</body>
+</html>
